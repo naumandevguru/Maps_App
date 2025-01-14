@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useCallback, useRef} from 'react';
 import {View, Alert} from 'react-native';
-import {styles} from '../../Styles/Styles';
+import {styles} from '../../styles/Styles';
 import MapSection from '../../components/MapSection';
 import InfoPanel from '../../components/InfoPanel';
 import CoordinateInput from '../../components/CoordinateInput';

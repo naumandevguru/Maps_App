@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
-import {styles} from '../Styles/Styles';
+import {styles} from '../styles/Styles';
 
 interface InfoPanelProps {
   selectingMarker: 'marker1' | 'marker2';

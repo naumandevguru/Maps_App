@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, TextInput, TouchableOpacity, Text} from 'react-native';
-import {styles} from '../Styles/Styles';
+import {styles} from '../styles/Styles';
 
 interface CoordinateInputProps {
   inputLatitude: string;

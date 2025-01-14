@@ -68,20 +68,17 @@ export const getCurrentLocation = (
             };
             onSuccess(newLocation);
           },
-          error => {
-            onError(error.message), console.log(error);
-          },
+          error => onError(error.message),
           {
             enableHighAccuracy: false,
             timeout: 10000,
             maximumAge: 5000,
           },
         );
-      } else if (error.code === 2) {
-        console.log(error);
-        onError('Please enable GPS to use this feature.');
+      } else if (error.code === error.POSITION_UNAVAILABLE) {
+      } else if (error.code === error.PERMISSION_DENIED) {
+        onError('Location permission denied. Please grant access.');
       } else {
-        console.log(error);
         onError(error.message);
       }
     },

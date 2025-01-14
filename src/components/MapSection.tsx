@@ -1,6 +1,6 @@
 import React, {useRef, useImperativeHandle, forwardRef} from 'react';
 import MapView, {Marker, Polyline} from 'react-native-maps';
-import {styles} from '../Styles/Styles';
+import {styles} from '../styles/Styles';
 
 interface MarkerPosition {
   latitude: number;

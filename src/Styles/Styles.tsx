@@ -42,7 +42,7 @@ export const styles: Styles = StyleSheet.create({
     paddingHorizontal: 20,
     justifyContent: 'space-between',
     gap: 7,
-    paddingBottom: 20,
+    paddingBottom: 30,
   },
   detailsRow: {
     flexDirection: 'row',

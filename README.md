@@ -7,22 +7,22 @@ This is a React Native app that integrates Google Maps functionality, allowing u
 - **Markers:** Allows users to move markers on the map and calculate the distance between them.
 - **Map Types:** Users can toggle between standard, satellite, and terrain map views.
 - **Coordinate Search:** Allows users to input latitude and longitude values and move the second marker to those coordinates.
-- **Distance Calculation:** Calculates the distance (in kilometers) between two markers.
+- **Distance Calculation:** Calculates the distance (in meters) between two markers. This calculation uses the Haversine formula, which accounts for the curvature of the Earth, and returns the distance in meters. To convert it to kilometers, we divide the result by 1000 (distanceInMeters / 1000).
 ## Requirements
 
-- Google Maps API Key
+- Google Maps API Key (You need to obtain a Google Maps API key and put it in your Android Manifest)
 - Device with GPS (for location features)
 ## Installation
     
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/naumandevguru/MapsProject.git
+git clone https://github.com/naumandevguru/Maps_App.git
 ```
 2. Navigate to the project directory:
 
 ```bash
-cd MapsProject
+cd Maps_App
 ```
 
 3. Install the dependencies:
@@ -83,7 +83,7 @@ A component that allows users to input latitude and longitude to move the second
 
 - **`locationUtils.ts:`** Contains functions for getting the current location and requesting location permissions.
 
-- **`distanceUtils.ts:`** Contains a function for calculating the distance between two geographical points using the Haversine formula.
+- **`distanceUtils.ts:`** Contains a function for calculating the distance (in kilometers) between two geographical points using the Haversine formula.
 ## Usage
 
 - **Get Current Location:** Automatically fetches and sets the user's current location on the map.
