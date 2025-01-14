@@ -1,79 +1,103 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Maps App - React Native
 
-# Getting Started
+This is a React Native app that integrates Google Maps functionality, allowing users to interact with maps, place markers, calculate distances between them, and change map types. The app fetches the user's current location and allows searching for coordinates.
+## Features
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+- **Current Location:** Fetches the user's current location and places a marker on the map.
+- **Markers:** Allows users to move markers on the map and calculate the distance between them.
+- **Map Types:** Users can toggle between standard, satellite, and terrain map views.
+- **Coordinate Search:** Allows users to input latitude and longitude values and move the second marker to those coordinates.
+- **Distance Calculation:** Calculates the distance (in kilometers) between two markers.
+## Requirements
 
-## Step 1: Start the Metro Server
-
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
-
-To start Metro, run the following command from the _root_ of your React Native project:
-
-```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
-```
-
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
+- Google Maps API Key
+- Device with GPS (for location features)
+## Installation
+    
+1. Clone the repository:
 
 ```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+git clone https://github.com/naumandevguru/MapsProject.git
 ```
-
-### For iOS
+2. Navigate to the project directory:
 
 ```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+cd MapsProject
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+3. Install the dependencies:
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+```bash
+yarn install
+```
 
-## Step 3: Modifying your App
+4. Set up your Google Maps API key by following the official Google Maps setup guide.
 
-Now that you have successfully run the app, let's modify it.
+5. Start the development server:
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+```bash
+yarn start --reset-cache
+```
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+6. Run the app on a device or emulator:
 
-## Congratulations! :tada:
+For iOS:
 
-You've successfully run and modified your React Native App. :partying_face:
+```bash
+npx react-native run-ios
+```
 
-### Now what?
+For Android:
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+```bash
+npx react-native run-android
+```
+## Components
 
-# Troubleshooting
+**`App.tsx`**
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+The main entry point of the app. It sets up the theme and displays the Home screen.
 
-# Learn More
+**`Home.tsx`**
 
-To learn more about React Native, take a look at the following resources:
+The home screen that includes:
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+- **MapSection:** Displays the map with markers.
+
+- **InfoPanel:** Shows information about the current markers and distance between them.
+
+- **CoordinateInput:** Allows the user to input coordinates and update the second marker position.
+
+**`MapSection`**
+
+A custom component that handles displaying the map, placing markers, and updating their positions when dragged.
+
+**`InfoPanel`**
+
+Displays information about the two markers, including their coordinates and the distance between them. It also includes a button to toggle map types.
+
+**`CoordinateInput`**
+
+A component that allows users to input latitude and longitude to move the second marker and search for new coordinates.
+## Utilities
+
+- **`locationUtils.ts:`** Contains functions for getting the current location and requesting location permissions.
+
+- **`distanceUtils.ts:`** Contains a function for calculating the distance between two geographical points using the Haversine formula.
+## Usage
+
+- **Get Current Location:** Automatically fetches and sets the user's current location on the map.
+
+- **Move Markers:** Tap on the map to move markers.
+
+- **Toggle Map Type:** Cycle through map types (standard, satellite, terrain).
+
+- **Distance Calculation:** Calculates the distance between two markers in kilometers.
+
+- **Search Coordinates:** Enter latitude and longitude to update the second marker's position.
+
+
+## Acknowledgements
+
+ - [Google Maps API for providing the map and location services.](https://developers.google.com/maps/documentation/android-sdk)
+ - [React Native for mobile app development.](https://reactnative.dev/)
